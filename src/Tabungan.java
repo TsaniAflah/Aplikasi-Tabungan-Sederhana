@@ -47,9 +47,7 @@ public class Tabungan {
     {
         try (Scanner setor = new Scanner(System.in)) {
             System.out.println("AKUN ATAS NAMA : " + this.nama);
-            Scanner noRek = new Scanner(System.in);
             System.out.print("MASUKKAN NOMOR REKENING ANDA :");
-            noRekening = noRek.nextLong();
             System.out.println("SALDO SAAT INI : Rp." +saldo);
             if (uang >= 50.000){
                 System.out.print("MEMASUKKAN SETORAN SEBESAR : Rp.");
@@ -67,9 +65,7 @@ public class Tabungan {
     {
         try (Scanner tarik = new Scanner(System.in)) {
             System.out.println("AKUN ATAS NAMA : " +this.nama);
-            Scanner noRek = new Scanner(System.in);
-            System.out.print("MASUKKAN NOMOR REKENING ANDA :");
-            noRekening = noRek.nextLong();
+            System.out.println("DENGAN NOMOR REKENING " + this.noRekening);
             while(jumlahPenarikan > 0){
                 if (jumlahPenarikan < saldo && saldo-jumlahPenarikan >= saldo_minimum){
                     System.out.println("SALDO SAAT INI : Rp." +saldo);
@@ -165,8 +161,11 @@ class TestTabungan
     public static void main(String[] args)
     {
         String nama;
-        long noRek;
+        long noRekening;
         double saldoAwal;
+        Scanner noRek = new Scanner(System.in);
+        Scanner snama = new Scanner(System.in);
+        Scanner menu = new Scanner(System.in);
         boolean condition = true;
 
         while (condition)
@@ -174,10 +173,26 @@ class TestTabungan
             Tabungan classTabungan = new Tabungan();
             //Simpanan classSimpanan = new Simpanan();
             //Junior classJunior = new Junior();
+            System.out.println("..............SELAMAT DATANG DI APLIKASI TABUNGAN SEDERHANA..............");
+            System.out.print("MASUKKAN NAMA ANDA : ");
+            nama = snama.nextLine();
+            //classTabungan
 
-            System.out.println("\n ");
+            System.out.print("MASUKKAN NOMOR REKENING ANDA :");
+            noRekening = noRek.nextLong();
+            //classTabungan
 
+            System.out.println("\t================MENU================");
+            System.out.println("PILIH STATUS");
+            System.out.println("1. TABUNGAN");
+            System.out.println("2. JUNIOR");
+            System.out.println("PILIHAN : ");
+            String pilihan = menu.nextLine();
+            switch (pilihan){
+                case "1" -> {
+
+                }
+            }
         }
     }
-
 }
